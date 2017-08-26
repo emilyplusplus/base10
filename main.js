@@ -1,8 +1,9 @@
-const {app, Menu, Tray} = require('electron')
+const {app, BrowserWindow, Tray} = require('electron')
 
 let tray = null
+
 app.on('ready', () => {
-  tray = new Tray('calculato16.png')
+  tray = new Tray('calculator16.png')
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Item1', type: 'radio'},
     {label: 'Item2', type: 'radio'},
