@@ -20,6 +20,8 @@ app.on('ready', () => {
       })
 
   win = new BrowserWindow({x: bounds.x - 100 + bounds.width / 2, y: bounds.y, width: 200, height: 300, frame: false, show: false, skipTaskbar: true, toolbar: false})
+
+  win.loadURL('https://www.tools4noobs.com/online_tools/base_convert/')
     
 
 
@@ -27,12 +29,14 @@ app.on('ready', () => {
   Menu.setApplicationMenu(null)
   
 
-  tray.setToolTip('This is my application.')
+  tray.setToolTip('base10')
 
   tray.on('click', () => {
     win.isVisible() ? win.hide() : win.show()
   })
 })
+
+
 
 app.on('browser-window-blur', () => {
     win.hide()
