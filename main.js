@@ -5,7 +5,7 @@ const url = require('url')
 app.dock.bounce()
 
 setTimeout(() => {
-    app.dock.hide()
+  app.dock.hide()
 }, 2000)
 
 let tray = null
@@ -14,7 +14,7 @@ let win = null
 app.on('ready', () => {
     
 
-    tray = new Tray('calculator16.png')
+    tray = new Tray('calc.png')
     let bounds = tray.getBounds()
 
     globalShortcut.register('CommandOrControl+Shift+B', () => {
