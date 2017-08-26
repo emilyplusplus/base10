@@ -16,6 +16,8 @@ app.on('ready', () => {
     let bounds = tray.getBounds()
 
     globalShortcut.register('CommandOrControl+Shift+B', () => {
+        let bounds = tray.getBounds()
+        win.setPosition(bounds.x - 100 + bounds.width / 2, bounds.y);
         win.isVisible() ? win.hide() : win.show()
       })
 
@@ -32,6 +34,8 @@ app.on('ready', () => {
   tray.setToolTip('base10')
 
   tray.on('click', () => {
+    let bounds = tray.getBounds()
+    win.setPosition(bounds.x - 100 + bounds.width / 2, bounds.y);
     win.isVisible() ? win.hide() : win.show()
   })
 })
