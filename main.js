@@ -1,6 +1,10 @@
 const {app, BrowserWindow, Menu, globalShortcut, Tray} = require('electron')
 
-app.dock.hide()
+app.dock.bounce()
+
+setTimeout(() => {
+    app.dock.hide()
+}, 2000)
 
 let tray = null
 let win = null
@@ -10,7 +14,6 @@ app.on('ready', () => {
 
     tray = new Tray('calculator16.png')
     let bounds = tray.getBounds()
-    console.log(bounds)
 
     globalShortcut.register('CommandOrControl+Shift+B', () => {
         win.isVisible() ? win.hide() : win.show()
