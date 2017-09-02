@@ -25,6 +25,8 @@ app.on('ready', () => {
 
   win = new BrowserWindow({x: bounds.x - 100 + bounds.width / 2, y: bounds.y, width: 200, height: 300, frame: false, show: false, skipTaskbar: true, toolbar: false})
 
+  win.openDevTools()
+
   win.loadURL('file://calculator.html')
 
   win.loadURL(url.format({

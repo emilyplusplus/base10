@@ -7,5 +7,9 @@
   },
   "scripts": {
     "start": "electron ."
+  },
+  "dependencies": {
+    "ionicons": "^3.0.0",
+    "vue": "^2.4.2"
   }
 }
