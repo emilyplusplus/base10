@@ -5,7 +5,7 @@ window.addEventListener("load", (event) => {
         el: '#output',
         data: {
             hex: 0,
-            dec: 0,
+            dec: 99999999,
             bin: 0,
             circle16: 'circle1',
             circle10: 'circle1',
@@ -42,7 +42,10 @@ window.addEventListener("load", (event) => {
         },
         methods: {
             keyPressed: (event) => {
-            console.log(event)
+                let key = event.toElement.innerHTML
+                console.log(key)
+                output.dec *= 10
+                output.dec += parseInt(key)
             }
         }
     })

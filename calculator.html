@@ -7,23 +7,21 @@
   </head>
   <body>
     <div id="output">
-      <div class="base" ng-click="reCalc(16)">
-          <p class="result" data-fittext="" data-fittext-nl="" data-fittext-load-delay="50" data-fittext-min="12" data-fittext-max="initial" ng-model="hex">{{hex}}</p>
+      <div class="base" v-on:click.stop="reCalc(16)">
+          <p class="result">{{hex}}</p>
           <p class="label">Hexadecimal <span v-bind:class="circle16" class="ion-ios-circle-outline"></span></p>
       </div>
-      <div class="baseH" ng-click="reCalc(10)">
-          <p class="resultH" data-fittext="" data-fittext-nl="" data-fittext-load-delay="50" data-fittext-min="18" data-fittext-max="initial" ng-model="dec">{{dec}}</p>
+      <div class="baseH" v-on:click.stop="reCalc(10)">
+          <p class="resultH">{{dec}}</p>
           <p class="labelH">Decimal <span v-bind:class="circle10" class="ion-ios-checkmark-outline"></span></p>
       </div>
-      <div class="baseH" ng-click="reCalc(2)">
-          <p class="resultH" data-fittext="" data-fittext-nl="" data-fittext-load-delay="50" data-fittext-min="18" data-fittext-max="initial" ng-model="bin">{{bin}}</p>
+      <div class="baseH" v-on:click.stop="reCalc(2)">
+          <p class="resultH">{{bin}}</p>
           <p class="labelH">Binary <span v-bind:class="circle2" class="ion-ios-circle-outline"></span></p>
       </div>
     </div>
     <div id="keypad">
-      <div v-for="key in keys" v-bind:class="key.styles" class="key" v-on:click.stop="keyPressed">
-        <span>{{key.description}}</span>
-      </div>
+      <div v-for="key in keys" v-bind:class="key.styles" class="key" v-on:click.stop="keyPressed">{{key.description}}</div>
     </div>
   </body>
 </html>
