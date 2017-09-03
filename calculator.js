@@ -1,11 +1,35 @@
 const Vue = require('vue/dist/vue.js')
 
 window.addEventListener("load", (event) => {
+    document.addEventListener("keyup", (event) => {
+        //console.log(event)
+
+        if(event.keyCode >= 48 && event.keyCode <= 57) {
+            let key = event.keyCode - 48
+
+            console.log(key)
+            
+            output.dec *= 10
+            output.dec += parseInt(key)
+
+            output.hex = output.dec.toString(16)
+            output.bin = output.dec.toString(2)
+        } else if(event.keyCode == 8) {
+            let key = 'DEL'
+            console.log(key)
+
+            output.dec = Math.floor(output.dec /= 10)
+
+            output.hex = output.dec.toString(16)
+            output.bin = output.dec.toString(2)
+        }
+    })
+
     let output = new Vue({
         el: '#output',
         data: {
             hex: 0,
-            dec: 99999999,
+            dec: 0,
             bin: 0,
             circle16: 'circle1',
             circle10: 'circle1',
@@ -44,8 +68,18 @@ window.addEventListener("load", (event) => {
             keyPressed: (event) => {
                 let key = event.toElement.innerHTML
                 console.log(key)
-                output.dec *= 10
-                output.dec += parseInt(key)
+
+                if (key === 'AC') {
+                    output.dec = 0
+                } else if (key === 'DEL') {
+                    output.dec = Math.floor(output.dec /= 10)
+                } else {
+                    output.dec *= 10
+                    output.dec += parseInt(key)
+                }
+
+                output.hex = output.dec.toString(16)
+                output.bin = output.dec.toString(2)
             }
         }
     })
