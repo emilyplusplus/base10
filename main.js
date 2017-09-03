@@ -19,7 +19,7 @@ app.on('ready', () => {
 
     globalShortcut.register('CommandOrControl+Shift+B', () => {
         let bounds = tray.getBounds()
-        win.setPosition(bounds.x - 100 + bounds.width / 2, bounds.y);
+        win.setPosition(bounds.x - 200 + bounds.width / 2, bounds.y);
         win.isVisible() ? win.hide() : win.show()
       })
 
