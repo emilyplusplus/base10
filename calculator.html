@@ -11,10 +11,14 @@
           <p class="result">{{hex}}</p>
           <p class="label">Hexadecimal <span v-bind:class="circle16" class="ion-ios-circle-outline"></span></p>
       </div>
-      <div class="baseH" v-on:click.stop="reCalc(10)">
-          <p class="resultH">{{dec}}</p>
-          <p class="labelH">Decimal <span v-bind:class="circle10" class="ion-ios-checkmark-outline"></span></p>
+      <div class="base" v-on:click.stop="reCalc(10)">
+          <p class="result">{{dec}}</p>
+          <p class="label">Decimal <span v-bind:class="circle10" class="ion-ios-checkmark-outline"></span></p>
       </div>
+      <div class="baseH" v-on:click.stop="reCalc(8)">
+        <p class="resultH">{{oct}}</p>
+        <p class="labelH">Octal <span v-bind:class="circle8" class="ion-ios-circle-outline"></span></p>
+    </div>
       <div class="baseH" v-on:click.stop="reCalc(2)">
           <p class="resultH">{{bin}}</p>
           <p class="labelH">Binary <span v-bind:class="circle2" class="ion-ios-circle-outline"></span></p>

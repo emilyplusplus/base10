@@ -13,6 +13,7 @@ window.addEventListener("load", (event) => {
             output.dec += parseInt(key)
 
             output.hex = output.dec.toString(16)
+            output.oct = output.dec.toString(8)
             output.bin = output.dec.toString(2)
         } else if(event.keyCode == 8) {
             let key = 'DEL'
@@ -21,6 +22,7 @@ window.addEventListener("load", (event) => {
             output.dec = Math.floor(output.dec /= 10)
 
             output.hex = output.dec.toString(16)
+            output.oct = output.dec.toString(8)
             output.bin = output.dec.toString(2)
         }
     })
@@ -30,9 +32,11 @@ window.addEventListener("load", (event) => {
         data: {
             hex: 0,
             dec: 0,
+            oct: 0,
             bin: 0,
             circle16: 'circle1',
             circle10: 'circle1',
+            circle8: 'circle1',
             circle2: 'circle1'
         },
         methods: {
@@ -79,6 +83,7 @@ window.addEventListener("load", (event) => {
                 }
 
                 output.hex = output.dec.toString(16)
+                output.oct = output.dec.toString(8)
                 output.bin = output.dec.toString(2)
             }
         }
